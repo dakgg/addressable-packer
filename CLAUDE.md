@@ -15,8 +15,8 @@ All code lives under [Editor/](Editor/) and compiles into the `Dakgg.Addressable
 
 Defined in [Editor/DirectoryBaseGroupSchemaAssetPostprocessor.cs](Editor/DirectoryBaseGroupSchemaAssetPostprocessor.cs):
 
-- `Latecia/Rebuild Addressables Directory Groups` (also `CONTEXT/AddressableAssetSettings → Rebuild Directory Groups`) → `DirectoryBaseSchemaPostAssetHandler.RebuildAll()`
-- `Latecia/Resolve Addressables Duplicate Assets` (also `CONTEXT/AddressableAssetSettings → Resolve Duplicate Assets`) → `ResolveDuplicates()`
+- `Addressable Packer/Rebuild Addressables Directory Groups` (also `CONTEXT/AddressableAssetSettings → Rebuild Directory Groups`) → `DirectoryBaseSchemaPostAssetHandler.RebuildAll()`
+- `Addressable Packer/Resolve Addressables Duplicate Assets` (also `CONTEXT/AddressableAssetSettings → Resolve Duplicate Assets`) → `ResolveDuplicates()`
 
 The Analyze rules also appear in the Addressables **Analyze** window (Window → Asset Management → Addressables → Analyze) via `[InitializeOnLoad]` registration with `AnalyzeSystem.RegisterNewRule<>`.
 
@@ -63,5 +63,5 @@ When editing a `.cs` file, bring the whole file into compliance, not just the li
 
 - Files are guarded for Editor use via the asmdef platform restriction; `CheckBundleDupeDependenciesMultiIsolatedGroups.cs` additionally wraps everything in `#if UNITY_EDITOR`.
 - `DirectoryBaseGroupSchema` lives in the `UnityEditor.AddressableAssets.Settings.GroupSchemas` namespace on purpose, to sit alongside Unity's built-in schemas.
-- The "Latecia" menu prefix is the consuming project's name; rename it there if forking for another project.
+- The `Addressable Packer` menu prefix is defined in `Editor/DirectoryBaseGroupSchemaAssetPostprocessor.cs`; rename it there if forking for another project.
 - Every Unity asset/folder has a paired `.meta` file — never create or rename `.cs`/folders without keeping the `.meta` in sync.

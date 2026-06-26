@@ -8,7 +8,7 @@ namespace UnityEditor.AddressableAssets.Settings.GroupSchemas
 {
     public class DirectoryBaseGroupSchemaAssetPostprocessor
     {
-        [MenuItem("Latecia/Rebuild Addressables Directory Groups")]
+        [MenuItem("Addressable Packer/Rebuild Addressables Directory Groups")]
         static void RebuildAllFromMenu()
         {
             if (AddressableAssetSettingsDefaultObject.Settings == null) return;
@@ -23,7 +23,7 @@ namespace UnityEditor.AddressableAssets.Settings.GroupSchemas
             importer.RebuildAll();
         }
 
-        [MenuItem("Latecia/Resolve Addressables Duplicate Assets")]
+        [MenuItem("Addressable Packer/Resolve Addressables Duplicate Assets")]
         static void CheckDuplicatesFromMenu()
         {
             if (AddressableAssetSettingsDefaultObject.Settings == null) return;

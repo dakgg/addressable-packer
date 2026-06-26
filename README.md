@@ -35,20 +35,20 @@ Or add to `Packages/manifest.json`:
    - **Directory Path** — the folder the group owns (e.g. `Assets/Art/Characters`).
    - **Recursive** — include subfolders (default on).
    - **Extensions** — optional comma-separated filter, e.g. `png, prefab` (empty = all).
-4. Run **`Latecia → Rebuild Addressables Directory Groups`** (or *CONTEXT → AddressableAssetSettings → Rebuild Directory Groups*).
+4. Run **`Addressable Packer → Rebuild Addressables Directory Groups`** (or *CONTEXT → AddressableAssetSettings → Rebuild Directory Groups*).
 
 Entries are created/moved to match the folder. Each entry's address is its path relative to the owning directory (without extension) suffixed with `@{GroupName}`, plus a `${GroupName}` label. Nested directory-groups take precedence over ancestor directory-groups. Rebuild only touches groups that carry the schema — manually-managed groups are left alone.
 
 ### Resolve duplicate dependencies
 
-- Run **`Latecia → Resolve Addressables Duplicate Assets`** to run the *Check Duplicate Bundle Dependencies V2* rule and auto-fix: duplicated assets are grouped by their set of bundle parents and packed by label into a `Duplicate Assets Sorted By Label` group (fewer bundles than the stock rule).
+- Run **`Addressable Packer → Resolve Addressables Duplicate Assets`** to run the *Check Duplicate Bundle Dependencies V2* rule and auto-fix: duplicated assets are grouped by their set of bundle parents and packed by label into a `Duplicate Assets Sorted By Label` group (fewer bundles than the stock rule).
 - Both custom rules are also available in the Addressables **Analyze** window:
   - *Check Duplicate Bundle Dependencies V2*
   - *Check Duplicate Bundle Dependencies Multi-Isolated Groups*
 
 ## Notes
 
-- The `Latecia` menu prefix is project-specific; rename it in `Editor/DirectoryBaseGroupSchemaAssetPostprocessor.cs` if forking.
+- The `Addressable Packer` menu prefix is defined in `Editor/DirectoryBaseGroupSchemaAssetPostprocessor.cs`; rename it there if forking.
 - The Analyze rules subclass Unity's internal analyze infrastructure and are sensitive to the pinned Addressables version. Re-validate if you bump `com.unity.addressables`.
 
 ## License

@@ -8,6 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `DirectoryBaseGroupSchema` ("Auto Asset Directory") — define an Addressable group's contents by an on-disk folder, with recursive and extension-filter options.
-- Menu items to rebuild directory-based groups and resolve duplicate assets (`Latecia/...` and `CONTEXT/AddressableAssetSettings/...`).
+- Menu items to rebuild directory-based groups and resolve duplicate assets (`Addressable Packer/...` and `CONTEXT/AddressableAssetSettings/...`).
 - `CheckBundleDupeDependenciesV2` Analyze rule — packs duplicated assets by their set of bundle parents into a single labeled group.
 - `CheckBundleDupeDependenciesMultiIsolatedGroups` Analyze rule — isolates duplicates into per-referencing-group bundles.
